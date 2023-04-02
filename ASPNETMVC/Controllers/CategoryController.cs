@@ -39,6 +39,8 @@ namespace ASPNETMVC.Controllers
                 // adds then saves to db
                 _db.Category.Add(obj);
                 _db.SaveChanges();
+                // stores data on 1 refresh.  Used for notification system
+                TempData["success"] = "Category created successfully";
                 // redirects to action method of Index page
                 return RedirectToAction("Index");
             }
@@ -72,6 +74,8 @@ namespace ASPNETMVC.Controllers
                 // updates then saves to db
                 _db.Category.Update(obj);
                 _db.SaveChanges();
+                // stores data on 1 refresh.  Used for notification system
+                TempData["success"] = "Category updated successfully";
                 // redirects to action method of Index page
                 return RedirectToAction("Index");
             }
@@ -109,8 +113,10 @@ namespace ASPNETMVC.Controllers
             // updates then saves to db
             _db.Category.Remove(obj);
             _db.SaveChanges();
+            // stores data on 1 refresh.  Used for notification system
+            TempData["success"] = "Category deleted successfully";
             // redirects to action method of Index page
-                return RedirectToAction("Index");
+            return RedirectToAction("Index");
         }
     }
 }
