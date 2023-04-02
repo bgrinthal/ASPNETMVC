@@ -40,6 +40,7 @@ namespace ASPNETMVC.Controllers
                 _db.Category.Add(obj);
                 _db.SaveChanges();
                 // stores data on 1 refresh.  Used for notification system
+                //TODO: Dynamically use input to personalize message using template literals
                 TempData["success"] = "Category created successfully";
                 // redirects to action method of Index page
                 return RedirectToAction("Index");
