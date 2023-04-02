@@ -197,6 +197,10 @@
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
+      "Id": "C:\\Users\\bgrin\\OneDrive\\Desktop\\Projects\\ASPNETMVC\\ASPNETMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-cyber.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-cyber.css"
+    },
+    {
       "Id": "C:\\Users\\bgrin\\OneDrive\\Desktop\\Projects\\ASPNETMVC\\ASPNETMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
