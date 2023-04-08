@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <h2>Trending</h2>
             <div class="list-group list-group-horizontal position-relative overflow-auto w-75%" id="trending">
-	        
+                
             </div>
         </div>
         <div class="container-fluid">
@@ -40,6 +40,7 @@
                 const res = await fetch('https://api.themoviedb.org/3/trending/movie/week?api_key=5ce87294fb3a862a4f6352de3650c10e');
                 const movieData = await res.json();
                 displayTrending(movieData);
+                console.log(movieData);
                 console.log(movieData.results[0]);
             }
             catch (err){
@@ -50,13 +51,15 @@
 
         const displayTrending = (data) => {
             for (let i = 0; i < 9; i++) {
+                console.log(data);
             const htmlString = `
-              <div class="col-3">
-                  <div class="card border-0 p-1" style="">
-                        <input type="image" class="card-img-top rounded-5" style="" src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" alt="${data.results[i].title} poster image">
-                  </div>
-              </div>
-
+                     <div class="col-3">
+                        <div class="card border-0 p-1" style="">
+                            <a href="` + data.results[i].title + `">
+                            <input type="image" class="card-img-top rounded-5" style="" src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" alt="${data.results[i].title} poster image">
+                            </a>
+                        </div>
+                     </div>
             `;
             trendingList.innerHTML += htmlString;
             }
@@ -80,7 +83,9 @@
                 const htmlString = `
                   <div class="col-3">
                       <div class="card border-0 p-1" style="">
-                            <input type="image" class="card-img-top rounded-5" style="" src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" alt="${data.results[i].title} poster image">
+                            <a href="` + data.results[i].title + `">
+                                <input type="image" class="card-img-top rounded-5" style="" src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" alt="${data.results[i].title} poster image">
+                            </a>
                       </div>
                   </div>
 
@@ -107,7 +112,9 @@
                 const htmlString = `
                       <div class="col-3">
                           <div class="card border-0 p-1" style="">
-                              <input type="image" class="card-img-top rounded-5" style="" src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" alt="${data.results[i].title} poster image">
+                                <a href="` + data.results[i].title + `">
+                                    <input type="image" class="card-img-top rounded-5" style="" src="https://image.tmdb.org/t/p/original/${data.results[i].poster_path}" alt="${data.results[i].title} poster image">
+                                </a>
                           </div>
                       </div>
 
